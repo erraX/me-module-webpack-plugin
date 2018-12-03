@@ -1,4 +1,6 @@
-export const PLUGIN_NAME = 'MeModulePlugin';
+import {getMeModuleInstance, destroyInstance} from 'me-module-utils';
+
+const PLUGIN_NAME = 'MeModulePlugin';
 
 export default class MeModulePlugin {
     constructor({depFiles = []}) {
@@ -14,10 +16,12 @@ export default class MeModulePlugin {
             this.depFiles.forEach(file => compilation.fileDependencies.add(file));
         });
 
-        compiler.hooks.watchRun.tap(pluginName, compilation => {
+        compiler.hooks.watchRun.tap(PLUGIN_NAME, compilation => {
             if (!global.meModules) return;
-            global.meModules = null;
-            global.getMeModulesInstance();
+            destroyInstance();
+            getMeModuleInstance();
+            // global.meModules = null;
+            // global.getMeModulesInstance();
         });
     }
 };

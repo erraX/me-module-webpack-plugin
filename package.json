@@ -1,6 +1,6 @@
 {
   "name": "me-module-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Me Module webpack plugin",
   "main": "./lib/index.js",
   "module": "./es/index.js",
@@ -13,7 +13,7 @@
     "clean": "rimraf $(cd src; ls) lib es",
     "test": "NODE_ENV=test jest",
     "watch:test": "NODE_ENV=test jest --watch",
-    "publish:me": "npm run build && npm run test && npm publish"
+    "prepare": "npm run build && npm run test"
   },
   "keywords": [
     "mejs"
@@ -34,10 +34,14 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
+    "babel-plugin-add-module-exports": "^1.0.0",
     "cross-env": "^5.2.0",
     "jest": "^23.6.0",
     "jest-extended": "^0.11.0",
     "regenerator-runtime": "^0.13.1",
     "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "me-module-utils": "^1.0.2"
   }
 }

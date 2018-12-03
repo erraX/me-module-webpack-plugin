@@ -1,0 +1,46 @@
+{
+  "env": {
+    "cjs": {
+      "plugins": ["babel-plugin-add-module-exports"],
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "8"
+            },
+            "modules": "cjs"
+          }
+        ]
+      ]
+    },
+    "es": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "8"
+            },
+            "modules": false
+          }
+        ]
+      ]
+    },
+    "test": {
+      "ignore": [
+        "test/codebase"
+      ],
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "8"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}
