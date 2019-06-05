@@ -1,5 +1,5 @@
 {
-  "name": "me-module-webpack-plugin",
+  "name": "@tencent/me-module-webpack-plugin",
   "version": "1.0.4",
   "description": "Me Module webpack plugin",
   "main": "./lib/index.js",
